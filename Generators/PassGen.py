@@ -18,6 +18,7 @@ def qr_wifi():
     elif int(my_entry.get()) > 30:
         error1 = "Password Too Long!!"
         pswd_out.insert(0, error1)
+        
 
     elif int(my_entry.get()) < 6:
         error2 = "Password Too Short!!"
@@ -35,7 +36,7 @@ def copy_pass():
 
 def save_qr():
     qr = pyqrcode.create(pswd_out.get())
-    qr.png('Password.png')
+    qr.svg('Password.svg')
 
 password_frame = Frame(root, bd=2, relief=RIDGE, background='#373738')
 password_frame.place(x=50, y=50, width=500, height=430)
