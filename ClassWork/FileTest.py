@@ -1,0 +1,7 @@
+test = open("C:\RAJ\PyhtonPrograms\ClassWork\File1.txt", "r")
+print(test.closed)
+print(test.name)
+print(test.mode)
+print(test.read())
+test.close()
+print(test.closed)
