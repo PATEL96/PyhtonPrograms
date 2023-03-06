@@ -1,5 +1,3 @@
-List = [(1,3),(2,4),(1,2),(4,4)]
-
 def sjf(processes):
     n = len(processes)
     burst_time = [processes[i][1] for i in range(n)]
@@ -32,8 +30,6 @@ def sjf(processes):
     
     return(waiting_time, turnaround_time, (total_waiting_time/n), (total_turnaround_time/n));
 
-# List = [(0,2),(1,2),(5,3),(6,4)]
-
 def fcfs(processes):
     n = len(processes)
     waiting_time = [0] * n
@@ -52,7 +48,16 @@ def fcfs(processes):
         turnaround_time[i] = current_time - processes[i][0]
         total_turnaround_time += turnaround_time[i]
         
-    return(waiting_time, turnaround_time, total_waiting_time, total_turnaround_time);
+    return(waiting_time, turnaround_time, (total_waiting_time/n), (total_turnaround_time/n));
 
-print(sjf(List))
-# sjf(List) 
+
+List = [(0,3),(0,4),(0,2),(0,4)]
+
+for i in range(len(List)):
+    print("Arrival Time Process", (i+1), ":", List[i][0])
+    print("Burst Time Process", (i+1), ":", List[i][1])
+    print()
+
+print("Average Waiting Time:", sjf(List)[2])
+print()
+print("Average Turn Arround Time:", sjf(List)[3])
