@@ -1,5 +1,6 @@
 {
 	"editor.insertSpaces": false,
 	"files.autoSave": "onFocusChange",
-	"editor.fontSize": 16
+	"editor.fontSize": 16,
+	"python.analysis.typeCheckingMode": "off"
 }
